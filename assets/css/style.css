@@ -1,0 +1,183 @@
+body{
+    margin: 0;
+    
+}
+
+.grid-container{
+    display: flex;
+
+}
+
+nav {
+    display: flex;
+    background: dodgerblue;
+    padding: 10px;
+    justify-content: space-between;
+    color: white;
+    width: 200px;
+}
+
+#icon_car{
+    padding-right: 10px;
+}
+
+header {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    grid-area: header;
+    background: grey;
+    padding-bottom: 10px;
+}
+
+header p {
+    padding: 0;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+header select {
+    display: flex;
+    justify-content: center;
+    
+}
+
+aside {
+    grid-area: aside;
+    display: flex;
+    
+    background: dodgerblue;
+    padding: 10px;
+    color: white;
+
+}
+
+main {
+    grid-area: main;
+    height: 85vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: auto;
+    justify-items: auto;
+    text-align: center;
+}
+
+main .boxes_container .box p {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+
+.box img {
+    grid-area: main;
+    width: 300px;
+    height: 200x;
+    padding: 25px;
+    
+}
+
+.box button {
+    width: 200px;
+    background-color:  dodgerblue;
+    color: white;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color:  dodgerblue;
+    color: white;
+    text-align: center;
+    padding: 10px;
+
+}
+
+.socialnetwork{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    
+}
+
+.box img:hover{
+    
+    transform: rotate(-10deg);
+    transition: transform 1s;
+}
+
+/* version mobile */
+@media (max-width: 576px) { 
+    .grid-container{
+        display: grid;
+        grid-template-areas:
+        "aside"
+        "main" 
+        "footer" ;
+    }
+
+    .boxes_container{
+        display: flex;
+        width: 100%;
+        display: grid;
+        grid-template-areas: 'box';
+        grid-template-columns: '1fr';
+    }
+
+
+    aside{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    };
+
+}
+
+/* version desktop */
+@media (min-width: 576px) { 
+    .grid-container{
+        display: grid;
+        grid-template-areas:
+        "aside  main"
+        "footer footer";
+    }
+
+    .boxes_container{
+        width: 100%;
+        display: grid;
+        grid-template-areas: 'box box box box';
+        grid-template-columns: '1fr 1fr 1fr 1fr';
+    }   
+
+    aside{
+        display: flex;
+        flex-direction: column;
+        min-width: 200px;
+        max-width: 200px;
+        height: 100vh;
+    };
+
+    footer{
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: red;
+        color: white;
+        text-align: center;
+             
+    };
+
+    nav{
+        
+    };
+
+}
